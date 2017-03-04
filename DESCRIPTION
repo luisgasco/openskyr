@@ -1,0 +1,17 @@
+Package: Ropensky
+Type: Package
+Title: Access to OpenSky REST API
+Version: 0.0.1
+Author: person("Luis", "Gasco", email = "luisgascosanchez@gmail.com",
+    role = c("aut", "cre"))
+Maintainer: The package maintainer <yourself@somewhere.net>
+Description: Functions for getting data from OpenSky REST API. Both with
+    anonymous or user/password validations.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Imports:
+    RCurl,
+    RJSONIO,
+    dplyr
+RoxygenNote: 5.0.1
