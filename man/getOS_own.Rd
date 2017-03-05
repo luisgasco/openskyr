@@ -29,8 +29,10 @@ get a 403 - Forbidden.
 \href{https://opensky-network.org/apidoc/rest.html#limitiations-for-anonymous-unauthenticated-users}{More API information}
 }
 \examples{
-your_own_data <- getOS_own("your_user","your_password",serials=c("your_sensor_serial1","your_sensor_serial2"))
-your_own_data2 <- getOS_own("your_user","your_password",serials="your_sensor_serial1"))
+your_own_data <- getOS_own("your_user","your_password",
+serials=c("your_sensor_serial1","your_sensor_serial2"))
+your_own_data2 <- getOS_own("your_user","your_password",
+serials="your_sensor_serial1")
 your_own_data3 <- getOS_own("your_user","your_password")
 }
 

@@ -1,7 +1,7 @@
 Package: Ropensky
 Type: Package
 Title: Access to OpenSky REST API
-Version: 0.0.1
+Version: 0.0.2
 Author: person("Luis", "Gasco", email = "luisgascosanchez@gmail.com",
     role = c("aut", "cre"))
 Maintainer: The package maintainer <yourself@somewhere.net>

@@ -15,10 +15,12 @@
 #' @examples
 #' data_completecases <- getOS_anom(TRUE,by=6:7)
 #' data <- getOS_anom()
+#' @export
+
 getOS_anom <- function(complete=TRUE, by=6:8) {
   # Get and order data ---------------------------
-  response <- getURL("opensky-network.org/api/states/all")
-  lresponse <- fromJSON(response, nullValue = NA)
+  response <- RCurl::getURL("https://opensky-network.org/api/states/all")
+  lresponse <- RJSONIO::fromJSON(response, nullValue = NA)
   m_response <- matrix(unlist(unlist(lresponse$states)),
                        nrow = length(lresponse$states),
                        byrow = T)
@@ -30,7 +32,8 @@ getOS_anom <- function(complete=TRUE, by=6:8) {
 
   # Filter data if necessary ---------------------------
   if (isTRUE(complete)){
-    df_response <- complete.cases(df_response[, by])
+    vector_sel <- complete.cases(df_response[, by])
+    df_response<-df_response[vector_sel, ]
   }
 
   return(df_response)

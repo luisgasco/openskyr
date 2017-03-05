@@ -9,9 +9,12 @@
 #' @return A dataframe with every flight registered on OpenSky Network in real-time, but only related
 #' to your own sensors registered in the platform.
 #' @examples
-#' your_own_data <- getOS_own("your_user","your_password",serials=c("your_sensor_serial1","your_sensor_serial2"))
-#' your_own_data2 <- getOS_own("your_user","your_password",serials="your_sensor_serial1"))
+#' your_own_data <- getOS_own("your_user","your_password",
+#' serials=c("your_sensor_serial1","your_sensor_serial2"))
+#' your_own_data2 <- getOS_own("your_user","your_password",
+#' serials="your_sensor_serial1")
 #' your_own_data3 <- getOS_own("your_user","your_password")
+#' @export
 
 getOS_own <- function(user=as.character(), key=as.character(),
                       complete=TRUE, by=6:8, serials=as.vector()) {
@@ -26,13 +29,13 @@ getOS_own <- function(user=as.character(), key=as.character(),
       serials <- paste(serial1, serial2_j, collapse = "")
     }
 
-    response <- getURL(paste0("https://", user, ":", key,
+    response <- RCurl::getURL(paste0("https://", user, ":", key,
                               "@opensky-network.org/api/states/own", serials))
   }else{
-    response <- getURL(paste0("https://", user, ":", key,
+    response <- RCurl::getURL(paste0("https://", user, ":", key,
                               "@opensky-network.org/api/states/own"))
   }
-  lresponse <- fromJSON(response, nullValue = NA)
+  lresponse <- RJSONIO::fromJSON(response, nullValue = NA)
   m_response < -matrix(unlist(unlist(lresponse$states)),
                        nrow = length(lresponse$states),
                        byrow = T )
@@ -43,7 +46,8 @@ getOS_own <- function(user=as.character(), key=as.character(),
   colnames(df_response) <- col_names
   # Filter data if necessary ---------------------------
   if (isTRUE(complete)){
-    df_response <- complete.cases(df_response[, by])
+    vector_sel <- complete.cases(df_response[, by])
+    df_response<-df_response[vector_sel, ]
   }
 
   return(df_response)

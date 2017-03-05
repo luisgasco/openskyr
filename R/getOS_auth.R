@@ -14,13 +14,14 @@
 #' @examples
 #' data_completecases <- getOS_auth("your_user","your_password",TRUE,by=6:7)
 #' data <- getOS_auth("your_user","your_password")
+#' @export
 
 getOS_auth <- function(user=as.character(), key=as.character(),
                        complete=TRUE, by=6:8) {
   # Get and order data ---------------------------
-  response <- getURL(paste0("https://", user, ":", key,
+  response <- RCurl::getURL(paste0("https://", user, ":", key,
                             "@opensky-network.org/api/states/all"))
-  lresponse <- fromJSON(response, nullValue = NA)
+  lresponse <- RJSONIO::fromJSON(response, nullValue = NA)
   m_response <- matrix(unlist(unlist(lresponse$states)),
                        nrow = length(lresponse$states),
                        byrow = T)
@@ -32,7 +33,8 @@ getOS_auth <- function(user=as.character(), key=as.character(),
 
   # Filter data if necessary ---------------------------
   if (isTRUE(complete)){
-    df_response <- complete.cases(df_response[, by])
+    vector_sel <- complete.cases(df_response[, by])
+    df_response<-df_response[vector_sel, ]
   }
 
   return(df_response)
