@@ -29,11 +29,7 @@ getOS_anom <- function(complete=TRUE, by=6:8) {
                  "on_ground", "velocity", "heading", "vertical_rate")
   df_response <- as.data.frame(m_response, stringsAsFactors = FALSE)
   colnames(df_response) <- col_names
-  df_response$longitude<-as.numeric(df_response$longitude)
-  df_response$latitude<-as.numeric(df_response$latitude)
-  df_response$time_velocity<-as.numeric(df_response$time_velocity)
-  df_response$velocity<-as.numeric(df_response$velocity)
-  df_response$altitude<-as.numeric(df_response$altitude)
+  df_response[] <- lapply(df_response, type.convert)
   df_response<-df_response[,1:12]
   # Filter data if necessary ---------------------------
   if (isTRUE(complete)){
