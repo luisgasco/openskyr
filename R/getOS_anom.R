@@ -20,16 +20,21 @@
 getOS_anom <- function(complete=TRUE, by=6:8) {
   # Get and order data ---------------------------
   response <- RCurl::getURL("https://opensky-network.org/api/states/all")
-  lresponse <- RJSONIO::fromJSON(response, nullValue = NA)
+  lresponse <- RJSONIO::fromJSON(response, nullValue = "")
   m_response <- matrix(unlist(unlist(lresponse$states)),
                        nrow = length(lresponse$states),
                        byrow = T)
   col_names <- c("icao24", "callsign", "origin_country", "time_position",
                  "time_velocity", "longitude", "latitude", "altitude",
-                 "on_ground", "velocity", "heading", "vertical_rate", "sensor")
+                 "on_ground", "velocity", "heading", "vertical_rate")
   df_response <- as.data.frame(m_response, stringsAsFactors = FALSE)
   colnames(df_response) <- col_names
-
+  df_response$longitude<-as.numeric(df_response$longitude)
+  df_response$latitude<-as.numeric(df_response$latitude)
+  df_response$time_velocity<-as.numeric(df_response$time_velocity)
+  df_response$velocity<-as.numeric(df_response$velocity)
+  df_response$altitude<-as.numeric(df_response$altitude)
+  df_response<-df_response[,1:12]
   # Filter data if necessary ---------------------------
   if (isTRUE(complete)){
     vector_sel <- complete.cases(df_response[, by])
