@@ -13,7 +13,6 @@
 #'                    lat = "latitude",
 #'                    id="icao24")
 #' @export
-#'
 
 
 trans_pl <- function(data, long, lat, id = NULL) {
@@ -22,11 +21,11 @@ trans_pl <- function(data, long, lat, id = NULL) {
   # Split into a list by ID field
   paths <- sp::split(data, data[[id]])
 
-  sp_lines <- SpatialLines(list(Lines(list(Line(paths[[1]])), "line1")))
+  sp_lines <- sp::SpatialLines(list(Lines(list(Line(paths[[1]])), "line1")))
   for (p in 2:length(paths)) {
     id <- paste0("line", as.character(p))
-    l <- SpatialLines(list(Lines(list(Line(paths[[p]])), id)))
-    sp_lines <- spRbind(sp_lines, l)
+    l <- sp::SpatialLines(list(sp::Lines(list(sp::Line(paths[[p]])), id)))
+    sp_lines <- maptools::spRbind(sp_lines, l)
   }
 
   return(sp_lines)

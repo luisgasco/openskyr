@@ -12,7 +12,7 @@ gen_density_map(flight_data, crs = "+init=epsg:4326", to = "raster",
 
 \item{crs}{A character string of projection arguments}
 
-\item{to}{raster-> export data in raster format}
+\item{to}{only works with "raster" string value. Export data in raster format}
 
 \item{min_value}{Every value under this parameter has not be showed in raster output.
 Only works when from="points"}

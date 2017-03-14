@@ -14,33 +14,32 @@
 #' raster<-gen_density_map(flight_data,min_value=0,from="points")
 #' raster<-gen_density_map(flight_data,from="lines")
 #' @export
-#'
 
 gen_density_map <- function(flight_data, crs = "+init=epsg:4326", to = "raster",
                             min_value = 0, from = "lines"){
   if (to == "raster"){
     if (from == "points"){
-      pattern <- ppp(flight_data$longitude, flight_data$latitude,
+      pattern <- spatstat::ppp(flight_data$longitude, flight_data$latitude,
                      c(min(flight_data$longitude), max(flight_data$longitude)),
                      c(min(flight_data$latitude), max(flight_data$latitude)))
-      pix_pattern <- pixellate.ppp(pattern, padzero = TRUE,
+      pix_pattern <- spatstat::pixellate.ppp(pattern, padzero = TRUE,
                                    preserve = TRUE, fractional = TRUE)
 
-      r <- raster(pix_pattern, crs = CRS(crs))
+      r <- raster::raster(pix_pattern, crs = CRS(crs))
       values(r)[values(r) <= min_value] <- NA
-      r <- disaggregate(r, 5)
-      r <- focal(r, w = matrix(1, 5, 5), mean)
+      r <- sp::disaggregate(r, 5)
+      r <- raster::focal(r, w = matrix(1, 5, 5), mean)
 
     }else if (from == "lines"){
       flight_data$icao24 <- as.character(flight_data$icao24)
       v_lines <- trans_pl(data = flight_data, long = "longitude",
                           lat = "latitude",
                           id = "icao24")
-      v_lines_spat <- as.psp(v_lines)
-      pix_pattern <- density(v_lines_spat, 0.01, edge = TRUE,  method = "FFT")
-      r <- raster(pix_pattern, crs = CRS(crs))
-      r <- disaggregate(r, 5)
-      r <- focal(r, w = matrix(1, 5, 5), mean)
+      v_lines_spat <- spatstat::as.psp(v_lines)
+      pix_pattern <- spatstat::density(v_lines_spat, 0.01, edge = TRUE,  method = "FFT")
+      r <- raster::raster(pix_pattern, crs = CRS(crs))
+      r <- sp::disaggregate(r, 5)
+      r <- raster::focal(r, w = matrix(1, 5, 5), mean)
     }
 
     return(r)
