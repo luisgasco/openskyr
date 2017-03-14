@@ -13,5 +13,9 @@ LazyData: true
 Imports:
     RCurl,
     RJSONIO,
-    dplyr
+    dplyr,
+    spatstat,
+    raster,
+    sp,
+    maptools
 RoxygenNote: 5.0.1

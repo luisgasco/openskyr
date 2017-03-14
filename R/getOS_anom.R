@@ -30,11 +30,11 @@ getOS_anom <- function(complete=TRUE, by=6:8) {
   df_response <- as.data.frame(m_response, stringsAsFactors = FALSE)
   colnames(df_response) <- col_names
   df_response[] <- lapply(df_response, type.convert)
-  df_response<-df_response[,1:12]
+  df_response <- df_response[,1:12]
   # Filter data if necessary ---------------------------
   if (isTRUE(complete)){
     vector_sel <- complete.cases(df_response[, by])
-    df_response<-df_response[vector_sel, ]
+    df_response <- df_response[vector_sel, ]
   }
 
   return(df_response)
