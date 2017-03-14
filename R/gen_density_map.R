@@ -4,7 +4,7 @@
 #'
 #' @param flight_data Dataframe with data from flights.
 #' @param crs A character string of projection arguments
-#' @param to raster-> export data in raster format
+#' @param to only works with "raster" string value. Export data in raster format
 #' @param min_value Every value under this parameter has not be showed in raster output.
 #' Only works when from="points"
 #' @param from A character strint to select the density calculation font. It
