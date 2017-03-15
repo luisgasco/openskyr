@@ -13,7 +13,7 @@ getOS_anom(complete = TRUE, by = 6:8)
 By default the filter works on Latitude, Longitude and Altitude column}
 }
 \value{
-The sum of \code{x} and \code{y}.
+A dataframe with every flight registered on OpenSky Network in real-time.
 }
 \description{
 Allow to access OpenSky Network API without authentication. There are some

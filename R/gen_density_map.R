@@ -36,7 +36,7 @@ gen_density_map <- function(flight_data, crs = "+init=epsg:4326", to = "raster",
                           lat = "latitude",
                           id = "icao24")
       v_lines_spat <- spatstat::as.psp(v_lines)
-      pix_pattern <- spatstat::density(v_lines_spat, 0.01, edge = TRUE,  method = "FFT")
+      pix_pattern <- density(v_lines_spat, 0.01, edge = TRUE,  method = "FFT")
       r <- raster::raster(pix_pattern, crs = CRS(crs))
       r <- sp::disaggregate(r, 5)
       r <- raster::focal(r, w = matrix(1, 5, 5), mean)

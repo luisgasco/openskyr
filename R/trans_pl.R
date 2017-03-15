@@ -14,7 +14,6 @@
 #'                    id="icao24")
 #' @export
 
-
 trans_pl <- function(data, long, lat, id = NULL) {
   # Convert to SpatialPointsDataFrame
   coordinates(data) <- c(long, lat)

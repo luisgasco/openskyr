@@ -11,7 +11,7 @@
 #' @param complete TRUE if you want to get complete cases depending on "by" variable.
 #' @param by A vector of numbers that specify the columns to take into account to complete cases.
 #' By default the filter works on Latitude, Longitude and Altitude column
-#' @return The sum of \code{x} and \code{y}.
+#' @return A dataframe with every flight registered on OpenSky Network in real-time.
 #' @examples
 #' data_completecases <- getOS_anom(TRUE,by=6:7)
 #' data <- getOS_anom()
