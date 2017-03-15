@@ -26,15 +26,15 @@ gen_density_map <- function(flight_data, crs = "+init=epsg:4326", to = "raster",
                                    preserve = TRUE, fractional = TRUE)
 
       r <- raster::raster(pix_pattern, crs = CRS(crs))
-      values(r)[values(r) <= min_value] <- NA
+      raster::values(r)[raster::values(r) <= min_value] <- NA
       r <- sp::disaggregate(r, 5)
       r <- raster::focal(r, w = matrix(1, 5, 5), mean)
 
     }else if (from == "lines"){
       flight_data$icao24 <- as.character(flight_data$icao24)
-      v_lines <- trans_pl(data = flight_data, long = "longitude",
-                          lat = "latitude",
-                          id = "icao24")
+      v_lines <- Ropensky::trans_pl(data = flight_data, long = "longitude",
+                            lat = "latitude",
+                            id = "icao24")
       v_lines_spat <- spatstat::as.psp(v_lines)
       pix_pattern <- density(v_lines_spat, 0.01, edge = TRUE,  method = "FFT")
       r <- raster::raster(pix_pattern, crs = CRS(crs))
