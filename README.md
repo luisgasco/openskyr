@@ -11,3 +11,4 @@ Last update
 -----------
 
 -   Added function to make basic density maps based on flight paths.
+-   There are an error in the use of import packages. It will be solve in the next commit.
