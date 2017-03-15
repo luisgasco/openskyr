@@ -11,8 +11,8 @@
 #' could be "lines" or "points"
 #' @return a density map in different type formats.Right now it is only developed "raster" option.
 #' @examples
-#' raster<-gen_density_map(flight_data,min_value=0,from="points")
-#' raster<-gen_density_map(flight_data,from="lines")
+#' raster<-gen_density_map(flight_data, min_value=0, from="points")
+#' raster<-gen_density_map(flight_data, from="lines")
 #' @export
 
 gen_density_map <- function(flight_data, crs = "+init=epsg:4326", to = "raster",
