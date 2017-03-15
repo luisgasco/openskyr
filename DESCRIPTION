@@ -16,6 +16,5 @@ Imports:
     dplyr,
     spatstat,
     raster,
-    sp,
     maptools
 RoxygenNote: 5.0.1
