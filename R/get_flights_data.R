@@ -10,6 +10,8 @@
 #'
 #' @return A dataframe with the list of flights arriving to the airport defined during the period specified in begin and end.
 #'
+#' @usage get_flights_data(username, password, icao24, begin, end)
+#'
 #' @export
 #' @import httr
 

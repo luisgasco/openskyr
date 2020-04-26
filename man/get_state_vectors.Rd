@@ -9,24 +9,15 @@
 An object of class \code{character} of length 16.
 }
 \usage{
-col_statevectors_names
+get_state_vectors(username, password, ...)
 }
 \arguments{
 \item{username}{Your opensky-network username.}
 
 \item{password}{Your opensky-network password.}
 
-\item{time}{(optional) The time in seconds since epoch (Unix time stamp to retrieve states for. Current time will be used if omitted.}
-
-\item{icao24}{(optional) One or more ICAO24 transponder addresses represented by a hex string (e.g. abc9f3). To filter multiple ICAO24 append the property once for each address. If omitted, the state vectors of all aircraft are returned.}
-
-\item{lamin}{(optional) Lower bound for the latitude in decimal degrees.}
-
-\item{lomin}{(optional) Lower bound for the longitude in decimal degrees.}
-
-\item{lamax}{(optional) Upper bound for the latitude in decimal degrees.}
-
-\item{lomax}{(optional) Upper bound for the longitude in decimal degrees.}
+\item{...}{Optional parameters to introduce in the request. This parameters are time, icao24, lamin, lomin, lamax, and lomax. These
+parameters are specified in \href{https://opensky-network.org/apidoc/rest.html#all-state-vectors}{opensky-network's REST API - All State Vectors}}
 }
 \value{
 A data.frame with fields specified in the opensky-network REST API \href{https://opensky-network.org/apidoc/rest.html#response}{documentation}.

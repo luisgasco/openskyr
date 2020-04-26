@@ -5,14 +5,12 @@
 #'
 #' @param username Your opensky-network username.
 #' @param password Your opensky-network password.
-#' @param time (optional) The time in seconds since epoch (Unix time stamp to retrieve states for. Current time will be used if omitted.
-#' @param icao24 (optional) One or more ICAO24 transponder addresses represented by a hex string (e.g. abc9f3). To filter multiple ICAO24 append the property once for each address. If omitted, the state vectors of all aircraft are returned.
-#' @param lamin (optional) Lower bound for the latitude in decimal degrees.
-#' @param lomin (optional) Lower bound for the longitude in decimal degrees.
-#' @param lamax (optional) Upper bound for the latitude in decimal degrees.
-#' @param lomax (optional) Upper bound for the longitude in decimal degrees.
+#' @param ... Optional parameters to introduce in the request. This parameters are time, icao24, lamin, lomin, lamax, and lomax. These
+#' parameters are specified in [opensky-network's REST API - All State Vectors](https://opensky-network.org/apidoc/rest.html#all-state-vectors)
 #'
 #' @return A data.frame with fields specified in the opensky-network REST API [documentation](https://opensky-network.org/apidoc/rest.html#response).
+#'
+#' @usage get_state_vectors(username, password, ...)
 #'
 #' @export
 #' @import httr

@@ -11,6 +11,8 @@
 #' @param option String indicating whether you want to request the departure or arrival flights. "arrivals" or "departures".
 #' @return A dataframe with the list of flights arriving to the airport defined in airport in the period specified between begin and end.
 #'
+#' @usage get_airport_data(username, password, airport, begin, end, option)
+#'
 #' @export
 #' @import httr
 

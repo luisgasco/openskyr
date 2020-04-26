@@ -9,6 +9,8 @@
 #'
 #' @return A dataframe with the trajectory of a certain aircraft at a given time.
 #'
+#' @usage get_track_data(username, password, icao24, time)
+#'
 #' @export
 #' @import httr
 
