@@ -1,4 +1,4 @@
-# openskyr <img src="man/figures/logo.svg" align="right" height = 150/>
+# openskyr <img src="man/figures/logo.png" align="right" height = 150/>
 
 <!-- badges: start -->
 [![R build status](https://github.com/r-lib/devtools/workflows/R-CMD-check/badge.svg)](https://github.com/r-lib/devtools/actions)
