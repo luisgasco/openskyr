@@ -2,7 +2,7 @@
 
 <!-- badges: start -->
 [![R build status](https://github.com/r-lib/devtools/workflows/R-CMD-check/badge.svg)](https://github.com/r-lib/devtools/actions)
-[![Coverage Status](https://codecov.io/github/r-lib/devtools/coverage.svg?branch=master)](https://codecov.io/github/r-lib/devtools?branch=master)
+[![Coverage Status](https://codecov.io/gh/luisgasco/openskyr/branch/master/graph/badge.svg)](https://codecov.io/gh/luisgasco/openskyr)
 [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/devtools)](https://cran.r-project.org/package=devtools)
 <!-- badges: end -->
 
