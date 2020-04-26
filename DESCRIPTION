@@ -1,20 +1,14 @@
-Package: Ropensky
-Type: Package
-Title: Access to OpenSky REST API
-Version: 0.0.2
-Author: person("Luis", "Gasco", email = "luisgascosanchez@gmail.com",
-    role = c("aut", "cre"))
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: Functions for getting data from OpenSky REST API. Both with
-    anonymous or user/password validations.
-License: MIT + file LICENSE
+Package: openskyr
+Title: R client for the OpenSky-Network REST API
+Version: 0.0.0.9000
+Authors@R: person("Luis", "Gasco", email = "luisgascosanchez@gmail.com", role = c("aut", "cre"))
+Description: This package provides a list of functions to facilitate access to the data offered by OpenSky-Network in its REST API.
+Depends:
+    R (>= 3.3.1)
+License: GPL-3
 Encoding: UTF-8
 LazyData: true
-Imports:
-    RCurl,
-    RJSONIO,
-    dplyr,
-    spatstat,
-    raster,
-    maptools
-RoxygenNote: 5.0.1
+RoxygenNote: 7.1.0
+Roxygen: list(markdown = TRUE)
+Suggests: testthat
+Imports: httr
