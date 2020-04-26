@@ -9,7 +9,7 @@
 An object of class \code{character} of length 12.
 }
 \usage{
-col_flight_names
+get_flights_data(username, password, icao24, begin, end)
 }
 \arguments{
 \item{username}{Your opensky-network username.}

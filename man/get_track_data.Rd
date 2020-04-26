@@ -9,7 +9,7 @@
 An object of class \code{character} of length 4.
 }
 \usage{
-col_tracks_names
+get_track_data(username, password, icao24, time)
 }
 \arguments{
 \item{username}{Your opensky-network username.}
