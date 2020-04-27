@@ -17,8 +17,8 @@
 #'
 #' Useful links:
 #'
-#'  * Opensky-network website https://opensky-network.org
-#'  * API Rest docs https://opensky-network.org/apidoc/rest.html
-#'  * Report bugs at https://github.com/luisgasco/openskyr/issues
+#'  * Opensky-network website [https://opensky-network.org](https://opensky-network.org)
+#'  * API Rest docs [https://opensky-network.org/apidoc/rest.html](https://opensky-network.org/apidoc/rest.html)
+#'  * Report bugs at [https://github.com/luisgasco/openskyr/issues](https://github.com/luisgasco/openskyr/issues)
 #'
 NULL

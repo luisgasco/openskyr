@@ -16,9 +16,9 @@ In many of the requests, you would need a user account that you can create in th
 \seealso{
 Useful links:
 \itemize{
-\item Opensky-network website https://opensky-network.org
-\item API Rest docs https://opensky-network.org/apidoc/rest.html
-\item Report bugs at https://github.com/luisgasco/openskyr/issues
+\item Opensky-network website \url{https://opensky-network.org}
+\item API Rest docs \url{https://opensky-network.org/apidoc/rest.html}
+\item Report bugs at \url{https://github.com/luisgasco/openskyr/issues}
 }
 }
 \author{

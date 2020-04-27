@@ -5,7 +5,7 @@
 #'
 #' @param username Your opensky-network username.
 #' @param password Your opensky-network password.
-#' @param airport ICAO identier for the airport.
+#' @param airport ICAO identifier for the airport.
 #' @param begin Start of time interval to retrieve flights for as Unix time (seconds since epoch).
 #' @param end End of time interval to retrieve flights for as Unix time (seconds since epoch).
 #' @param option String indicating whether you want to request the departure or arrival flights. "arrivals" or "departures".

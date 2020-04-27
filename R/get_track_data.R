@@ -5,7 +5,7 @@
 #' @param username Your opensky-network username.
 #' @param password Your opensky-network password.
 #' @param icao24 Unique ICAO 24-bit address of the transponder in hex string representation. All letters need to be lower case
-#' @param time Unix time in seconds since epoch. It can be any time betwee start and end of a known flight. If time = 0, get the live track if there is any flight ongoing for the given aircraft.
+#' @param time Unix time in seconds since epoch. It can be any time between start and end of a known flight. If time = 0, get the live track if there is any flight ongoing for the given aircraft.
 #'
 #' @return A dataframe with the trajectory of a certain aircraft at a given time.
 #'

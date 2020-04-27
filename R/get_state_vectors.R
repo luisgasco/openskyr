@@ -16,15 +16,14 @@
 #' @import httr
 
 
-
 get_state_vectors <- function(username = NULL, password = NULL, ...) {
     # Build list of the params specified in the function input:
     params_list <- listn(...)
     if (!is.null(username) && !is.null(password)) {
         # If username and password are specified
         response_init <- GET("https://opensky-network.org/api/states/all",
-                                   authenticate(username, password),
-                                 query = params_list)
+                             authenticate(username, password),
+                             query = params_list)
     } else {
         # If username and password are not specified remove the time element of params,since cannot be used
         params_list$time <- NULL

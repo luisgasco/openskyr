@@ -24,19 +24,16 @@ This package provides a list of functions to facilitate access to the data offer
 
 
 ## Installation
- TODO
-
+ You can install the latest version of openskyr from Github with the following command. In the future, you can install the library from CRAN.
+ 
 ```{r, eval = FALSE}
 # Install the released version from CRAN
-install.packages("")
+# install.packages("")
 # Or the development version from GitHub:
 # install.packages("devtools")
-devtools::install_github("")
+devtools::install_github("luisgasco/openskyr")
 ```
 
-## Usage
-
-TODO
 
 ## You may also like...
 
