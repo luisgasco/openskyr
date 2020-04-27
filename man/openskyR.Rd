@@ -3,13 +3,14 @@
 \docType{package}
 \name{openskyR}
 \alias{openskyR}
-\title{openskyr: A package for computating the notorious bar statistic.}
+\title{openskyr: A package to facilitate the access to the data offered by OpenSky-Network in its REST API.}
 \description{
 DESCRIPTION
 }
 \section{openskyR functions}{
 
-The openskyR functions ...
+The openskyR functions allow you to access of any of the REST-API functions available in opensky-network.
+In many of the requests, you would need a user account that you can create in their website.
 }
 
 \seealso{
@@ -17,7 +18,7 @@ Useful links:
 \itemize{
 \item Opensky-network website https://opensky-network.org
 \item API Rest docs https://opensky-network.org/apidoc/rest.html
-\item Report bugs at GITUB CODE
+\item Report bugs at https://github.com/luisgasco/openskyr/issues
 }
 }
 \author{

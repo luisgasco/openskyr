@@ -2,7 +2,7 @@ Package: openskyr
 Title: R client for the OpenSky-Network REST API
 Version: 0.0.0.9000
 Authors@R: person("Luis", "Gasco", email = "luisgascosanchez@gmail.com", role = c("aut", "cre"))
-Description: This package provides a list of functions to facilitate access to the data offered by OpenSky-Network in its REST API.
+Description: A package to facilitate the access to the data offered by OpenSky-Network in its REST API.
 Depends:
     R (>= 3.3.1)
 License: GPL-3

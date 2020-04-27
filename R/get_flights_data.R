@@ -15,9 +15,7 @@
 #' @export
 #' @import httr
 
-col_flight_names <- c("icao24", "firstSeen", "estDepartureAirport", "lastSeen", "estArrivalAirport", "callsign",
-                      "estDepartureAirportHorizDistance","estDepartureAirportVertDistance", "estArrivalAirportHorizDistance",
-                      "estArrivalAirportVertDistance", "departureAirportCandidatesCount", "arrivalAirportCandidatesCount")
+
 
 get_flights_data <- function(username = NULL, password = NULL, icao24 = NULL, begin = NULL, end = NULL) {
 
@@ -41,6 +39,6 @@ get_flights_data <- function(username = NULL, password = NULL, icao24 = NULL, be
     capture_error(response_init)
     response <- content(response_init)
     m_response <- suppressWarnings(data.frame(Reduce(rbind, response)))
-    colnames(m_response) <- col_flight_names
+    colnames(m_response) <- recover_names("flight_names")
     return(m_response)
 }

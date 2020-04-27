@@ -14,8 +14,6 @@
 #' @export
 #' @import httr
 
-col_tracks_names <- c("icao24","startTime","endTime","callsign")
-col_trackdata_names <- c("time","latitude","longitude","baro_altitude","true_track","on_ground")
 
 
 get_track_data <- function(username = NULL, password = NULL, icao24 = NULL, time = NULL) {
@@ -35,10 +33,10 @@ get_track_data <- function(username = NULL, password = NULL, icao24 = NULL, time
 
   # Put track_data in df format:
   track_data <- as.data.frame(do.call(rbind, lapply(response$path, as.vector)))
-  colnames(track_data) <- col_trackdata_names
+  colnames(track_data) <- recover_names("trackdata_names")
 
   meta_data <- data.frame(response[1:4])
-  colnames(meta_data) <- col_tracks_names
+  colnames(meta_data) <- recover_names("tracks_names")
 
   m_response<-merge(meta_data,track_data)
 

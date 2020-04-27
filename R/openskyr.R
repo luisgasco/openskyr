@@ -1,9 +1,11 @@
-#' openskyr: A package for computating the notorious bar statistic.
+#' openskyr: A package to facilitate the access to the data offered by OpenSky-Network in its REST API.
 #'
 #' DESCRIPTION
 #'
 #' @section openskyR functions:
-#' The openskyR functions ...
+#' The openskyR functions allow you to access of any of the REST-API functions available in opensky-network.
+#'  In many of the requests, you would need a user account that you can create in their website.
+#'
 #'
 #' @docType package
 #' @name openskyR
@@ -17,6 +19,6 @@
 #'
 #'  * Opensky-network website https://opensky-network.org
 #'  * API Rest docs https://opensky-network.org/apidoc/rest.html
-#'  * Report bugs at GITUB CODE
+#'  * Report bugs at https://github.com/luisgasco/openskyr/issues
 #'
 NULL

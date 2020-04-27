@@ -12,3 +12,4 @@ capture_error(response)
 \description{
 Capture error in a GET response
 }
+\keyword{internal}

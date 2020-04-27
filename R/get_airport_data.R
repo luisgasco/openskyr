@@ -16,9 +16,7 @@
 #' @export
 #' @import httr
 
-col_airport_names <- c("icao24", "firstSeen", "estDepartureAirport", "lastSeen", "estArrivalAirport", "callsign",
-                       "estDepartureAirportHorizDistance","estDepartureAirportVertDistance", "estArrivalAirportHorizDistance",
-                       "estArrivalAirportVertDistance", "departureAirportCandidatesCount", "arrivalAirportCandidatesCount")
+
 
 get_airport_data <- function(username = NULL, password = NULL, airport = NULL, begin = NULL, end = NULL, option = c("departures", "arrivals")) {
     # Build list of the params specified in the function input:
@@ -43,7 +41,7 @@ get_airport_data <- function(username = NULL, password = NULL, airport = NULL, b
         response <- content(response_init)
         # PRepare the output
         m_response <- suppressWarnings(data.frame(Reduce(rbind, response)))
-        colnames(m_response) <- col_airport_names
+        colnames(m_response) <- recover_names("airport_names")
     } else {
         # If Login data is not provided, it will throw an error.
         stop("OpenSky API needs login data to get this information", call. = FALSE)

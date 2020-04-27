@@ -15,9 +15,7 @@
 #' @export
 #' @import httr
 
-col_statevectors_names <- c("icao24", "callsign", "origin_country", "time_position", "last_contact", "longitude", "latitude",
-                            "baro_altitude", "on_ground","velocity", "true_track", "vertical_rate", "geo_altitude", "squawk",
-                            "spi", "position_source")
+
 
 get_state_vectors <- function(username = NULL, password = NULL, ...) {
     # Build list of the params specified in the function input:
@@ -39,6 +37,6 @@ get_state_vectors <- function(username = NULL, password = NULL, ...) {
     response <- content(response_init)
     # PRepare the output dataframe
     m_response <- suppressWarnings(data.frame(Reduce(rbind, response$states)))
-    colnames(m_response) <- col_statevectors_names
+    colnames(m_response) <- recover_names("statevectors_names")
     return(m_response)
 }
