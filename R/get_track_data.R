@@ -18,7 +18,7 @@
 
 get_track_data <- function(username = NULL, password = NULL, icao24 = NULL, time = NULL) {
 
-  if (!is.null(icao24) && !is.null(username) && !is.null(password)) {
+  if (!is.null(icao24) && !is.null(time) && !is.null(username) && !is.null(password)) {
     # Build list of the GET params:
     params_list <- list(icao24 = icao24, time = time)
     params_list <- params_list[vapply(params_list, Negate(is.null), NA)]
@@ -33,16 +33,12 @@ get_track_data <- function(username = NULL, password = NULL, icao24 = NULL, time
 
   # Put track_data in df format:
   track_data <- as.data.frame(do.call(rbind, lapply(response$path, as.vector)))
-  colnames(track_data) <- recover_names("trackdata_names")
+  colnames(track_data) <- unlist(recover_names("trackdata_names"))
 
   meta_data <- data.frame(response[1:4])
-  colnames(meta_data) <- recover_names("tracks_names")
+  colnames(meta_data) <- unlist(recover_names("tracks_names"))
 
   m_response<-merge(meta_data,track_data)
 
   return(m_response)
 }
-username="luisgasco"
-password="masterEOI2015"
-icao24="494103"
-time=1587126600

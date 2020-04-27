@@ -11,7 +11,7 @@ get_airport_data(username, password, airport, begin, end, option)
 
 \item{password}{Your opensky-network password.}
 
-\item{airport}{ICAO identier for the airport.}
+\item{airport}{ICAO identifier for the airport.}
 
 \item{begin}{Start of time interval to retrieve flights for as Unix time (seconds since epoch).}
 

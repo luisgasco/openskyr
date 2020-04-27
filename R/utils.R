@@ -32,7 +32,7 @@ listn <- function(...) {
 #' @param option Option of column names recovered
 #'
 #'@keywords internal
-recover_names <- function(option) {
+recover_names <- function(option="statevector_names") {
 
   if(option == "airport_names"){
     colnames <- c("icao24", "firstSeen", "estDepartureAirport", "lastSeen", "estArrivalAirport", "callsign",
@@ -52,5 +52,5 @@ recover_names <- function(option) {
     colnames <- c("time","latitude","longitude","baro_altitude","true_track","on_ground")
   }
 
-  return(colnames)
+  return(list(colnames))
 }

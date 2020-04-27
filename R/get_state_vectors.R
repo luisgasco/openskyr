@@ -36,6 +36,6 @@ get_state_vectors <- function(username = NULL, password = NULL, ...) {
     response <- content(response_init)
     # PRepare the output dataframe
     m_response <- suppressWarnings(data.frame(Reduce(rbind, response$states)))
-    colnames(m_response) <- recover_names("statevectors_names")
+    colnames(m_response) <- unlist(recover_names(option="statevectors_names"))
     return(m_response)
 }
