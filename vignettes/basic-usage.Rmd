@@ -1,54 +1,44 @@
 ---
-title: "Basic usage"
+title: "Openskyr: basic usage"
 author: "Luis Gasco Sanchez"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Basic usage}
+  %\VignetteIndexEntry{Openskyr: basic usage}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
-
-This is just a small vignette to show how to load and execute functions from openskyr. In the future, I will include a shiny app to show the capabilites of the library to show airflights real-time data.
-
-## Vignette Info
-
-Note the various macros within the `vignette` section of the metadata block above. These are required in order to instruct R how to build the vignette. Note that you should change the `title` field and the `\VignetteIndexEntry` to match the title of your vignette.
-
-## Styles
-
-The `html_vignette` template includes a basic CSS theme. To override this theme you can specify your own CSS in the document metadata as follows:
-
-    output: 
-      rmarkdown::html_vignette:
-        css: mystyles.css
-
-## Figures
-
-The figure sizes have been personalized so that you can easily put two images side-by-side. 
-
-```{r, fig.show='hold'}
-plot(1:10)
-plot(10:1)
+```{r, setup, include=FALSE }
+NOT_CRAN <- identical(tolower(Sys.getenv("NOT_CRAN")), "true")
+knitr::opts_chunk$set(purl = NOT_CRAN)
 ```
 
-You can enable figure captions by `fig_caption: yes` in YAML:
 
-    output:
-      rmarkdown::html_vignette:
-        fig_caption: yes
 
-Then you can use the chunk option `fig.cap = "Your figure caption."` in **knitr**.
+This is just a small vignette to show how to load and execute functions from openskyr. In the future, I will include a shiny app to show the capabilites of the library to show airflights real-time data.
+## Load the library
+```{r}
+library(openskyr)
+```
+## Get state vectors
+Get data with authentication in the REST API service:
+```{r}
+state_vectors_df = get_state_vectors()
+state_vectors_df
+```
+Get data with authentication in the REST API service:
+```{r, eval=NOT_CRAN }
+state_vectors_df <- get_state_vectors(username="test_api_user",password="Test_Api_User")
+head(state_vectors_df)
+```
+## Get airport data
+
+
+## Get flights data
+
+
+## Get tracks data
+
 
 ## More Examples
 
-You can write math expressions, e.g. $Y = X\beta + \epsilon$, footnotes^[A footnote here.], and tables, e.g. using `knitr::kable()`.
-
-```{r, echo=FALSE, results='asis'}
-knitr::kable(head(mtcars, 10))
-```
-
-Also a quote using `>`:
-
-> "He who gives up [code] safety for [code] speed deserves neither."
-([via](https://twitter.com/hadleywickham/status/504368538874703872))

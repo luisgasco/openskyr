@@ -9,6 +9,7 @@ password = read.table(file=path_to_file)[2,]
 
 test_that("get_airport_data works",{
   expect_error(get_airport_data())
+  skip('Authentication with personal data in API')
   expect_error(get_airport_data(username=username,password=password,option="trial"))
   expect_error(get_airport_data(username=username,password=password,option="departures")) # Needs more data
   expect_error(get_airport_data(username=username,password=password,option="departures",airport="EDDF")) # Needs more data

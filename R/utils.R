@@ -33,7 +33,6 @@ listn <- function(...) {
 #'
 #'@keywords internal
 recover_names <- function(option="statevector_names") {
-
   if(option == "airport_names"){
     colnames <- c("icao24", "firstSeen", "estDepartureAirport", "lastSeen", "estArrivalAirport", "callsign",
                          "estDepartureAirportHorizDistance","estDepartureAirportVertDistance", "estArrivalAirportHorizDistance",

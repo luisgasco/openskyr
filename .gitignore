@@ -2,3 +2,4 @@
 .Rhistory
 .RData
 inst/doc
+tests/testthat/personal_data.txt
