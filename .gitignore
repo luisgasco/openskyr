@@ -3,3 +3,4 @@
 .RData
 inst/doc
 tests/testthat/personal_data.txt
+CRAN-RELEASE
