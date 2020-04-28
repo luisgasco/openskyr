@@ -8,37 +8,60 @@ vignette: >
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
-```{r, setup, include=FALSE }
+```{r setup , include=FALSE }
 NOT_CRAN <- identical(tolower(Sys.getenv("NOT_CRAN")), "true")
 knitr::opts_chunk$set(purl = NOT_CRAN)
 ```
 
 
 
-This is just a small vignette to show how to load and execute functions from openskyr. In the future, I will include a shiny app to show the capabilites of the library to show airflights real-time data.
+This is just a small vignette to show how to load and run openskyr functions. In the future, I will include a shiny app to show the capabilites of the library to display real-time flight data. You have to consider that if you want to test the library with these commands, you will need to provide your own credentials (username/passwords) and probably need to change the time parameters of the functions since there are some [time limitations](https://opensky-network.org/apidoc/rest.html#limitations) in the API, and when you run the functions those data will probably not be accessible anymore.
+
 ## Load the library
 ```{r}
 library(openskyr)
 ```
+
 ## Get state vectors
-Get data with authentication in the REST API service:
-```{r}
-state_vectors_df = get_state_vectors()
-state_vectors_df
+Retrieve any state vector of the OpenSky data without authentication:
+```{r, eval=F  }
+state_vectors_df <- get_state_vectors()
 ```
-Get data with authentication in the REST API service:
-```{r, eval=NOT_CRAN }
-state_vectors_df <- get_state_vectors(username="test_api_user",password="Test_Api_User")
-head(state_vectors_df)
+
+Retrieve any state vector of the OpenSky data with authentication (you need to register in opensky-network):
+```{r, eval=F }
+state_vectors_df <- get_state_vectors(username="your_username",password="your_password")
 ```
+
 ## Get airport data
+Retrieve flights for a certain airport which departed within a given time interval [begin, end]:
+```{r eval = F}
+data_airport_df <- get_airport_data(username="your_username",password="your_password",
+                                     option="departures",airport="EDDF",
+                                     begin=1517227200,end=1517230800)
+```
 
 
 ## Get flights data
+Retrieve flights for a particular aircraft within a certain time interval:
+```{r eval = F}
+data_specific_flight <- get_flights_data(username="your_username",password="your_password",
+                                         icao24="3c675a",begin=1517184000,end=1517270400)
+```
+
+Retrieves flights for a certain time interval [begin, end]:
+```{r eval = F}
+data_all_flight <- get_flights_data(username="your_username",password="your_password",
+                                    begin=1517227200,end=1517230800)
+```
 
 
 ## Get tracks data
+Retrieve the trajectory for a certain aircraft at a given time:
+```{r eval = F}
+data_flight_track <- get_track_data(username=username,password="your_password",
+                                    icao24="494103",time=1587126600)
+```
 
 
-## More Examples
 

@@ -32,24 +32,24 @@ listn <- function(...) {
 #' @param option Option of column names recovered
 #'
 #'@keywords internal
-recover_names <- function(option="statevector_names") {
+recover_names <- function(option) {
   if(option == "airport_names"){
-    colnames <- c("icao24", "firstSeen", "estDepartureAirport", "lastSeen", "estArrivalAirport", "callsign",
+    column_names <- c("icao24", "firstSeen", "estDepartureAirport", "lastSeen", "estArrivalAirport", "callsign",
                          "estDepartureAirportHorizDistance","estDepartureAirportVertDistance", "estArrivalAirportHorizDistance",
                          "estArrivalAirportVertDistance", "departureAirportCandidatesCount", "arrivalAirportCandidatesCount")
   } else if(option == "flight_names") {
-    colnames <- c("icao24", "firstSeen", "estDepartureAirport", "lastSeen", "estArrivalAirport", "callsign",
+    column_names <- c("icao24", "firstSeen", "estDepartureAirport", "lastSeen", "estArrivalAirport", "callsign",
                           "estDepartureAirportHorizDistance","estDepartureAirportVertDistance", "estArrivalAirportHorizDistance",
                           "estArrivalAirportVertDistance", "departureAirportCandidatesCount", "arrivalAirportCandidatesCount")
   } else if(option == "statevector_names") {
-    colnames <- c("icao24", "callsign", "origin_country", "time_position", "last_contact", "longitude", "latitude",
-                                "baro_altitude", "on_ground","velocity", "true_track", "vertical_rate", "geo_altitude", "squawk",
-                                "spi", "position_source")
+    column_names <- c("icao24", "callsign", "origin_country", "time_position", "last_contact", "longitude", "latitude",
+                    "baro_altitude", "on_ground","velocity", "true_track", "vertical_rate","sensors", "geo_altitude", "squawk",
+                    "spi", "position_source")
   } else if (option == "tracks_names") {
-    colnames <- c("icao24","startTime","endTime","callsign")
+    column_names <- c("icao24","startTime","endTime","callsign")
   } else if (option == "trackdata_names"){
-    colnames <- c("time","latitude","longitude","baro_altitude","true_track","on_ground")
+    column_names <- c("time","latitude","longitude","baro_altitude","true_track","on_ground")
   }
 
-  return(list(colnames))
+  return(column_names)
 }

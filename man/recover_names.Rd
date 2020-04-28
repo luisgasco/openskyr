@@ -4,7 +4,7 @@
 \alias{recover_names}
 \title{Recover column names}
 \usage{
-recover_names(option = "statevector_names")
+recover_names(option)
 }
 \arguments{
 \item{option}{Option of column names recovered}
