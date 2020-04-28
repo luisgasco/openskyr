@@ -2,6 +2,7 @@
 ^\.Rproj\.user$
 ^.github
 ^README.Rmd
-^man/figures
+^man/figures/logo.svg
+^man/figures/logo_ppt.pptx
 ^cran-comments.md
 ^tests/testthat/personal_data.txt
