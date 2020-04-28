@@ -11,13 +11,17 @@ get_state_vectors(username, password, ...)
 
 \item{password}{Your opensky-network password.}
 
-\item{...}{Optional parameters to introduce in the request. This parameters are time, icao24, lamin, lomin, lamax, and lomax. These
-parameters are specified in \href{https://opensky-network.org/apidoc/rest.html#all-state-vectors}{opensky-network's REST API - All State Vectors}}
+\item{...}{Optional parameters to introduce in the request. This parameters
+are time, icao24, lamin, lomin, lamax, and lomax. These parameters are
+specified in \href{https://bit.ly/3cMb2CS}{opensky-network's REST API - All State Vectors}}
 }
 \value{
-A data.frame with fields specified in the opensky-network REST API \href{https://opensky-network.org/apidoc/rest.html#response}{documentation}.
+A data.frame with fields specified in the opensky-network REST API
+\href{https://bit.ly/3aLraD0}{documentation}.
 }
 \description{
-Retrieve any state vector at the OpenSky-Network API. Depending on whether you use your personal credentials or not,
-you will have some limitations rate limits as explained in \href{https://opensky-network.org/apidoc/rest.html#limitations}{opensky-network documentation}
+Retrieve any state vector at the OpenSky-Network API.
+Depending on whether you use your personal credentials or not,
+you will have some limitations rate limits as explained in
+\href{https://bit.ly/2SgxFY6}{opensky-network documentation}
 }

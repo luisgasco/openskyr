@@ -15,7 +15,7 @@ knitr::opts_chunk$set(purl = NOT_CRAN)
 
 
 
-This is just a small vignette to show how to load and run openskyr functions. In the future, I will include a shiny app to show the capabilites of the library to display real-time flight data. You have to consider that if you want to test the library with these commands, you will need to provide your own credentials (username/passwords) and probably need to change the time parameters of the functions since there are some [time limitations](https://opensky-network.org/apidoc/rest.html#limitations) in the API, and when you run the functions those data will probably not be accessible anymore.
+This is just a small vignette to show how to load and run openskyr functions. In the future, I will include a shiny app to show the capabilities of the library to display real-time flight data. You have to consider that if you want to test the library with these commands, you will need to provide your own credentials (username/passwords) and probably need to change the time parameters of the functions since there are some [time limitations](https://opensky-network.org/apidoc/rest.html#limitations) in the API, and when you run the functions those data will probably not be accessible anymore.
 
 ## Load the library
 ```{r}

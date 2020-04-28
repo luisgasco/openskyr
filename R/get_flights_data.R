@@ -1,14 +1,20 @@
 #' @title get_flights_data
 #' @name get_flights_data
-#' @description Retrieve flights for a certain airport which arrived within a given time interval. If no flights are found for the given period, HTTP stats 404 - Not found is returned with an empty response body.
+#' @description Retrieve flights for a certain airport which arrived
+#'  within a given time interval. If no flights are found for the given
+#'  period, HTTP stats 404 - Not found is returned with an empty response body.
 #'
 #' @param username Your opensky-network username.
 #' @param password Your opensky-network password.
-#' @param icao24 Unique ICAO 24-bit address of the transponder in hex string representation. All letters need to be lower case.
-#' @param begin Start of time interval to retrieve flights for as Unix time (seconds since epoch).
-#' @param end End of time interval to retrieve flights for as Unix time (seconds since epoch).
+#' @param icao24 Unique ICAO 24-bit address of the transponder in hex string
+#'  representation. All letters need to be lower case.
+#' @param begin Start of time interval to retrieve flights for as Unix time
+#'  (seconds since epoch).
+#' @param end End of time interval to retrieve flights for as Unix time
+#'  (seconds since epoch).
 #'
-#' @return A dataframe with the list of flights arriving to the airport defined during the period specified in begin and end.
+#' @return A dataframe with the list of flights arriving to the airport
+#'  defined during the period specified in begin and end.
 #'
 #' @usage get_flights_data(username, password, icao24, begin, end)
 #'
@@ -17,7 +23,8 @@
 
 
 
-get_flights_data <- function(username = NULL, password = NULL, icao24 = NULL, begin = NULL, end = NULL) {
+get_flights_data <- function(username = NULL, password = NULL,
+                             icao24 = NULL, begin = NULL, end = NULL) {
 
     if (!is.null(icao24) && !is.null(username) && !is.null(password)) {
         # Build list of the GET params:
@@ -30,7 +37,8 @@ get_flights_data <- function(username = NULL, password = NULL, icao24 = NULL, be
         params_list <- params_list[vapply(params_list, Negate(is.null), NA)]
         url_request <- "https://opensky-network.org/api/flights/all"
     } else {
-        stop("OpenSky API needs login data to get this information", call. = FALSE)
+        stop("OpenSky API needs login data to get this information",
+             call. = FALSE)
     }
 
     response_init <- GET(url_request,
@@ -38,7 +46,8 @@ get_flights_data <- function(username = NULL, password = NULL, icao24 = NULL, be
                          query = params_list)
     capture_error(response_init)
     response <- content(response_init)
-    m_response <- suppressWarnings(data.frame(Reduce(rbind, response),row.names = NULL))
+    m_response <- suppressWarnings(data.frame(Reduce(rbind, response),
+                                              row.names = NULL))
     colnames(m_response) <- recover_names("flight_names")
     return(m_response)
 }

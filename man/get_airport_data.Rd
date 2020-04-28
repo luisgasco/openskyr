@@ -13,16 +13,21 @@ get_airport_data(username, password, airport, begin, end, option)
 
 \item{airport}{ICAO identifier for the airport.}
 
-\item{begin}{Start of time interval to retrieve flights for as Unix time (seconds since epoch).}
+\item{begin}{Start of time interval to retrieve flights for as Unix
+time (seconds since epoch).}
 
-\item{end}{End of time interval to retrieve flights for as Unix time (seconds since epoch).}
+\item{end}{End of time interval to retrieve flights for as Unix time
+(seconds since epoch).}
 
-\item{option}{String indicating whether you want to request the departure or arrival flights. "arrivals" or "departures".}
+\item{option}{String indicating whether you want to request the departure
+or arrival flights. "arrivals" or "departures".}
 }
 \value{
-A dataframe with the list of flights arriving to the airport defined in airport in the period specified between begin and end.
+A dataframe with the list of flights arriving to the airport defined
+in airport in the period specified between begin and end.
 }
 \description{
-Retrieve flights for a certain airport which arrived within a given time interval.
-You should specified if you want departure or arrival flights in the function.
+Retrieve flights for a certain airport which arrived within
+a given time interval. You should specified if you want departure or
+arrival flights in the function.
 }

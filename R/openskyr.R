@@ -1,10 +1,12 @@
-#' openskyr: A package to facilitate the access to the data offered by OpenSky-Network in its REST API.
+#' openskyr: A package to facilitate the access to the data offered by
+#'  OpenSky-Network in its REST API.
 #'
 #' DESCRIPTION
 #'
 #' @section openskyR functions:
-#' The openskyR functions allow you to access of any of the REST-API functions available in opensky-network.
-#'  In many of the requests, you would need a user account that you can create in their website.
+#' The openskyR functions allow you to access of any of the REST-API
+#'  functions available in opensky-network. In many of the requests,
+#'   you would need a user account that you can create in their website.
 #'
 #'
 #' @docType package

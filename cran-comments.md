@@ -1,24 +1,16 @@
 ## Test environments
-* local OS X install, R 3.1.2
-* ubuntu 12.04 (on travis-ci), R 3.1.2
-* win-builder (devel and release)
+* win-builder (devel and release) on local and Github CI/CD
+* ubuntu 16.04 (release) on Github CI/CD
+* macOS builder (devel and release) on Github CI/CD
 
-## R CMD check results
+## R CMD check GITHUB CI/CD results
 There were no ERRORs or WARNINGs. 
 
-There was 1 NOTE:
+## Notes
+In my local (Windows), I have test the library using all the tools
+provided by devtools::check(), without any error; and devtools::release():
 
-* checking dependencies in R code ... NOTE
-  Namespace in Imports field not imported from: 'R6'
-
-  R6 is a build-time dependency.
-
-## Downstream dependencies
-I have also run R CMD check on downstream dependencies of httr 
-(https://github.com/wch/checkresults/blob/master/httr/r-release). 
-All packages that I could install passed except:
-
-* Ecoengine: this appears to be a failure related to config on 
-  that machine. I couldn't reproduce it locally, and it doesn't 
-  seem to be related to changes in httr (the same problem exists 
-  with httr 0.4).
+* spell_check() : Suggest revise the spelling in proper nouns such as Gasco, OpenSky, etc.
+* "R CMD check": No ERRORs or WARNINGs
+* "check_rhub()": The rhub builder identifies mis-spelled words in DESCRIPTION
+for proper nouns (the propor noun is OpenSky, it cannot be changed).
