@@ -5,4 +5,5 @@
 ### Info.
 
 - First realease of openskyr library.
+- Added License file.
 
