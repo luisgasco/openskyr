@@ -1,3 +1,14 @@
+## Resubmission
+This is a resubmission. In this version I have:
+
+* I have omitted the redundant "R" in a description
+* I have added the URL of the api in the description field.
+* I have spoken with OpenSky-Network people and they agree with the use of
+OpenSky, but I have added a clarification that they are not responsible of 
+the library (I have specified the term "third-party" in some parts of the
+description and title)
+
+
 ## Test environments
 * win-builder (devel and release) on local and Github CI/CD
 * ubuntu 16.04 (release) on Github CI/CD

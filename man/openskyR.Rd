@@ -3,7 +3,7 @@
 \docType{package}
 \name{openskyR}
 \alias{openskyR}
-\title{openskyr: A package to facilitate the access to the data offered by
+\title{openskyr: A third-party client to facilitate the access to the data offered by
 OpenSky-Network in its REST API.}
 \description{
 DESCRIPTION

@@ -1,4 +1,4 @@
-#' openskyr: A package to facilitate the access to the data offered by
+#' openskyr: A third-party client to facilitate the access to the data offered by
 #'  OpenSky-Network in its REST API.
 #'
 #' DESCRIPTION

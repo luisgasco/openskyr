@@ -6,3 +6,4 @@
 ^man/figures/logo_ppt.pptx
 ^cran-comments.md
 ^tests/testthat/personal_data.txt
+^CRAN-RELEASE$
