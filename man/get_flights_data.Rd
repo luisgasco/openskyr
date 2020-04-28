@@ -11,15 +11,21 @@ get_flights_data(username, password, icao24, begin, end)
 
 \item{password}{Your opensky-network password.}
 
-\item{icao24}{Unique ICAO 24-bit address of the transponder in hex string representation. All letters need to be lower case.}
+\item{icao24}{Unique ICAO 24-bit address of the transponder in hex string
+representation. All letters need to be lower case.}
 
-\item{begin}{Start of time interval to retrieve flights for as Unix time (seconds since epoch).}
+\item{begin}{Start of time interval to retrieve flights for as Unix time
+(seconds since epoch).}
 
-\item{end}{End of time interval to retrieve flights for as Unix time (seconds since epoch).}
+\item{end}{End of time interval to retrieve flights for as Unix time
+(seconds since epoch).}
 }
 \value{
-A dataframe with the list of flights arriving to the airport defined during the period specified in begin and end.
+A dataframe with the list of flights arriving to the airport
+defined during the period specified in begin and end.
 }
 \description{
-Retrieve flights for a certain airport which arrived within a given time interval. If no flights are found for the given period, HTTP stats 404 - Not found is returned with an empty response body.
+Retrieve flights for a certain airport which arrived
+within a given time interval. If no flights are found for the given
+period, HTTP stats 404 - Not found is returned with an empty response body.
 }
