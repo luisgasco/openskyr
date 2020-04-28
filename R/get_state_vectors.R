@@ -15,9 +15,6 @@
 #' @export
 #' @import httr
 
-col_statevectors_names <- c("icao24", "callsign", "origin_country", "time_position", "last_contact", "longitude", "latitude",
-                            "baro_altitude", "on_ground","velocity", "true_track", "vertical_rate", "geo_altitude", "squawk",
-                            "spi", "position_source")
 
 get_state_vectors <- function(username = NULL, password = NULL, ...) {
     # Build list of the params specified in the function input:
@@ -25,8 +22,8 @@ get_state_vectors <- function(username = NULL, password = NULL, ...) {
     if (!is.null(username) && !is.null(password)) {
         # If username and password are specified
         response_init <- GET("https://opensky-network.org/api/states/all",
-                                   authenticate(username, password),
-                                 query = params_list)
+                             authenticate(username, password),
+                             query = params_list)
     } else {
         # If username and password are not specified remove the time element of params,since cannot be used
         params_list$time <- NULL
@@ -38,7 +35,7 @@ get_state_vectors <- function(username = NULL, password = NULL, ...) {
     # Get the data from the response
     response <- content(response_init)
     # PRepare the output dataframe
-    m_response <- suppressWarnings(data.frame(Reduce(rbind, response$states)))
-    colnames(m_response) <- col_statevectors_names
+    m_response <- suppressWarnings(data.frame(Reduce(rbind, response$states),row.names = NULL))
+    names(m_response) <- recover_names("statevector_names")
     return(m_response)
 }

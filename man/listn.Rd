@@ -12,3 +12,4 @@ listn(...)
 \description{
 Create a named-list.
 }
+\keyword{internal}

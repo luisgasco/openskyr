@@ -1,6 +1,7 @@
 #' Capture error in a GET response
 #' @param response of a GET functions
 #'
+#'@keywords internal
 capture_error <- function(response) {
   # IF error in API
   if (http_error(response)) {
@@ -11,6 +12,7 @@ capture_error <- function(response) {
 #' Create a named-list.
 #' @param ... list of variables used to create the named-list.
 #'
+#'@keywords internal
 listn <- function(...) {
   dots <- list(...)
   if (length(dots) != 0) {
@@ -24,4 +26,30 @@ listn <- function(...) {
     v <- list()
   }
   return(v)
+}
+
+#' Recover column names
+#' @param option Option of column names recovered
+#'
+#'@keywords internal
+recover_names <- function(option) {
+  if(option == "airport_names"){
+    column_names <- c("icao24", "firstSeen", "estDepartureAirport", "lastSeen", "estArrivalAirport", "callsign",
+                         "estDepartureAirportHorizDistance","estDepartureAirportVertDistance", "estArrivalAirportHorizDistance",
+                         "estArrivalAirportVertDistance", "departureAirportCandidatesCount", "arrivalAirportCandidatesCount")
+  } else if(option == "flight_names") {
+    column_names <- c("icao24", "firstSeen", "estDepartureAirport", "lastSeen", "estArrivalAirport", "callsign",
+                          "estDepartureAirportHorizDistance","estDepartureAirportVertDistance", "estArrivalAirportHorizDistance",
+                          "estArrivalAirportVertDistance", "departureAirportCandidatesCount", "arrivalAirportCandidatesCount")
+  } else if(option == "statevector_names") {
+    column_names <- c("icao24", "callsign", "origin_country", "time_position", "last_contact", "longitude", "latitude",
+                    "baro_altitude", "on_ground","velocity", "true_track", "vertical_rate","sensors", "geo_altitude", "squawk",
+                    "spi", "position_source")
+  } else if (option == "tracks_names") {
+    column_names <- c("icao24","startTime","endTime","callsign")
+  } else if (option == "trackdata_names"){
+    column_names <- c("time","latitude","longitude","baro_altitude","true_track","on_ground")
+  }
+
+  return(column_names)
 }

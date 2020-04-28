@@ -5,7 +5,7 @@
 #'
 #' @param username Your opensky-network username.
 #' @param password Your opensky-network password.
-#' @param airport ICAO identier for the airport.
+#' @param airport ICAO identifier for the airport.
 #' @param begin Start of time interval to retrieve flights for as Unix time (seconds since epoch).
 #' @param end End of time interval to retrieve flights for as Unix time (seconds since epoch).
 #' @param option String indicating whether you want to request the departure or arrival flights. "arrivals" or "departures".
@@ -16,9 +16,7 @@
 #' @export
 #' @import httr
 
-col_airport_names <- c("icao24", "firstSeen", "estDepartureAirport", "lastSeen", "estArrivalAirport", "callsign",
-                       "estDepartureAirportHorizDistance","estDepartureAirportVertDistance", "estArrivalAirportHorizDistance",
-                       "estArrivalAirportVertDistance", "departureAirportCandidatesCount", "arrivalAirportCandidatesCount")
+
 
 get_airport_data <- function(username = NULL, password = NULL, airport = NULL, begin = NULL, end = NULL, option = c("departures", "arrivals")) {
     # Build list of the params specified in the function input:
@@ -42,8 +40,8 @@ get_airport_data <- function(username = NULL, password = NULL, airport = NULL, b
         # Get the data from the response
         response <- content(response_init)
         # PRepare the output
-        m_response <- suppressWarnings(data.frame(Reduce(rbind, response)))
-        colnames(m_response) <- col_airport_names
+        m_response <- suppressWarnings(data.frame(Reduce(rbind, response),row.names = NULL))
+        names(m_response) <- recover_names("airport_names")
     } else {
         # If Login data is not provided, it will throw an error.
         stop("OpenSky API needs login data to get this information", call. = FALSE)

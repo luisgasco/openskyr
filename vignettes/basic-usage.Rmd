@@ -1,58 +1,67 @@
 ---
-title: "Basic usage"
+title: "Openskyr: basic usage"
 author: "Luis Gasco Sanchez"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteIndexEntry{Openskyr: basic usage}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
-
-Vignettes are long form documentation commonly included in packages. Because they are part of the distribution of the package, they need to be as compact as possible. The `html_vignette` output type provides a custom style sheet (and tweaks some options) to ensure that the resulting html is as small as possible. The `html_vignette` format:
-
-- Never uses retina figures
-- Has a smaller default figure size
-- Uses a custom CSS stylesheet instead of the default Twitter Bootstrap style
-
-## Vignette Info
-
-Note the various macros within the `vignette` section of the metadata block above. These are required in order to instruct R how to build the vignette. Note that you should change the `title` field and the `\VignetteIndexEntry` to match the title of your vignette.
-
-## Styles
-
-The `html_vignette` template includes a basic CSS theme. To override this theme you can specify your own CSS in the document metadata as follows:
-
-    output: 
-      rmarkdown::html_vignette:
-        css: mystyles.css
-
-## Figures
-
-The figure sizes have been customised so that you can easily put two images side-by-side. 
-
-```{r, fig.show='hold'}
-plot(1:10)
-plot(10:1)
+```{r setup , include=FALSE }
+NOT_CRAN <- identical(tolower(Sys.getenv("NOT_CRAN")), "true")
+knitr::opts_chunk$set(purl = NOT_CRAN)
 ```
 
-You can enable figure captions by `fig_caption: yes` in YAML:
 
-    output:
-      rmarkdown::html_vignette:
-        fig_caption: yes
 
-Then you can use the chunk option `fig.cap = "Your figure caption."` in **knitr**.
+This is just a small vignette to show how to load and run openskyr functions. In the future, I will include a shiny app to show the capabilites of the library to display real-time flight data. You have to consider that if you want to test the library with these commands, you will need to provide your own credentials (username/passwords) and probably need to change the time parameters of the functions since there are some [time limitations](https://opensky-network.org/apidoc/rest.html#limitations) in the API, and when you run the functions those data will probably not be accessible anymore.
 
-## More Examples
-
-You can write math expressions, e.g. $Y = X\beta + \epsilon$, footnotes^[A footnote here.], and tables, e.g. using `knitr::kable()`.
-
-```{r, echo=FALSE, results='asis'}
-knitr::kable(head(mtcars, 10))
+## Load the library
+```{r}
+library(openskyr)
 ```
 
-Also a quote using `>`:
+## Get state vectors
+Retrieve any state vector of the OpenSky data without authentication:
+```{r, eval=F  }
+state_vectors_df <- get_state_vectors()
+```
 
-> "He who gives up [code] safety for [code] speed deserves neither."
-([via](https://twitter.com/hadleywickham/status/504368538874703872))
+Retrieve any state vector of the OpenSky data with authentication (you need to register in opensky-network):
+```{r, eval=F }
+state_vectors_df <- get_state_vectors(username="your_username",password="your_password")
+```
+
+## Get airport data
+Retrieve flights for a certain airport which departed within a given time interval [begin, end]:
+```{r eval = F}
+data_airport_df <- get_airport_data(username="your_username",password="your_password",
+                                     option="departures",airport="EDDF",
+                                     begin=1517227200,end=1517230800)
+```
+
+
+## Get flights data
+Retrieve flights for a particular aircraft within a certain time interval:
+```{r eval = F}
+data_specific_flight <- get_flights_data(username="your_username",password="your_password",
+                                         icao24="3c675a",begin=1517184000,end=1517270400)
+```
+
+Retrieves flights for a certain time interval [begin, end]:
+```{r eval = F}
+data_all_flight <- get_flights_data(username="your_username",password="your_password",
+                                    begin=1517227200,end=1517230800)
+```
+
+
+## Get tracks data
+Retrieve the trajectory for a certain aircraft at a given time:
+```{r eval = F}
+data_flight_track <- get_track_data(username=username,password="your_password",
+                                    icao24="494103",time=1587126600)
+```
+
+
+
