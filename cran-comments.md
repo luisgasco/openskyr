@@ -1,13 +1,13 @@
 ## Test environments
-* win-builder (devel and release)
-* ubuntu 16.04 (release)
-* macOS builder (devel and release)
+* win-builder (devel and release) on local and Github CI/CD
+* ubuntu 16.04 (release) on Github CI/CD
+* macOS builder (devel and release) on Github CI/CD
 
 ## R CMD check GITHUB CI/CD results
 There were no ERRORs or WARNINGs. 
 
 ## Notes
-IIn my local (Windows), I have test the library using all the tools
+In my local (Windows), I have test the library using all the tools
 provided by devtools::check(), without any error; and devtools::release():
 
 * spell_check() : Suggest revise the spelling in proper nouns such as Gasco, OpenSky, etc.

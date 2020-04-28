@@ -2,6 +2,6 @@
 ^\.Rproj\.user$
 ^.github
 ^README.Rmd
-^man\figures
+^man/figures
 ^cran-comments.md
-^test/testthat/personal_data.txt
+^tests/testthat/personal_data.txt
