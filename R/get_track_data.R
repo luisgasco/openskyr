@@ -4,8 +4,8 @@
 #' given time interval. If no flights are found for the given period, HTTP
 #' stats 404 - Not found is returned with an empty response body.
 #'
-#' @param username Your opensky-network username.
-#' @param password Your opensky-network password.
+#' @param username Your 'OpenSky Network' username.
+#' @param password Your 'OpenSky Network' password.
 #' @param icao24 Unique ICAO 24-bit address of the transponder in hex string
 #' representation. All letters need to be lower case
 #' @param time Unix time in seconds since epoch. It can be any time between
@@ -14,7 +14,10 @@
 #' @return A dataframe with the trajectory of a certain aircraft at a given
 #' time.
 #'
-#' @usage get_track_data(username, password, icao24, time)
+#'
+#' @examples
+#' \dontrun{get_track_data(username = "your_username", password = "your_password",
+#' icao24 = 3c4b26, time = 0)}
 #'
 #' @export
 #' @import httr

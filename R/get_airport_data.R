@@ -4,8 +4,8 @@
 #'  a given time interval. You should specified if you want departure or
 #'  arrival flights in the function.
 #'
-#' @param username Your opensky-network username.
-#' @param password Your opensky-network password.
+#' @param username Your 'OpenSky Network' username.
+#' @param password Your 'OpenSky Network' password.
 #' @param airport ICAO identifier for the airport.
 #' @param begin Start of time interval to retrieve flights for as Unix
 #'  time (seconds since epoch).
@@ -16,7 +16,11 @@
 #' @return A dataframe with the list of flights arriving to the airport defined
 #'  in airport in the period specified between begin and end.
 #'
-#' @usage get_airport_data(username, password, airport, begin, end, option)
+#' @examples
+#' \dontrun{get_airport_data(username = "your_username", password = "your_password",
+#'  airport = "EDDF", begin = 1517227200, end = 1517230800, option = "arrivals")}
+#' \dontrun{get_airport_data(username = "your_username", password = "your_password",
+#'  airport = "EDDF", begin = 1517227200, end = 1517230800, option = "departures")}
 #'
 #' @export
 #' @import httr

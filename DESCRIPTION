@@ -1,12 +1,12 @@
 Package: openskyr
-Title:  Third-Party Client for the OpenSky Network REST API
+Title:  Third-Party Client for the  'OpenSky Network' REST API
 Version: 0.1.0
 Authors@R: person("Luis",
                   "Gasco",
                   email = "luisgascosanchez@gmail.com",
                   role = c("aut", "cre", "cph"))
 Description: Third-party client to facilitate the access to the data offered by
-    the OpenSky Network in its REST API <https://opensky-network.org/apidoc/>.
+    the 'OpenSky Network' in its REST API <https://opensky-network.org/apidoc/>.
 Depends:
     R (>= 3.3.1)
 License: GPL-3

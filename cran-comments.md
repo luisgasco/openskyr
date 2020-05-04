@@ -1,4 +1,12 @@
 ## Resubmission
+This is a resubmission. In this version::
+
+* I have written the API name in single quotes in title and descriptions.
+* I have added small executable examples in the Rd-files to illustrate the use 
+of the exported functions.
+
+
+## Resubmission
 This is a resubmission. In this version I have:
 
 * I have omitted the redundant "R" in a description

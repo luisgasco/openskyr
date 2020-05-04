@@ -20,7 +20,7 @@ knitr::opts_chunk$set(
 [![Coverage Status](https://codecov.io/gh/luisgasco/openskyr/branch/master/graph/badge.svg)](https://codecov.io/gh/luisgasco/openskyr)
 <!-- badges: end -->
 
-This package provides a list of functions to facilitate access to the data offered by [OpenSky-Network](https://opensky-network.org/) in its [REST API](https://opensky-network.org/apidoc/rest.html).
+This package provides a list of functions to facilitate access to the data offered by [OpenSkyNetwork](https://opensky-network.org/) in its [REST API](https://opensky-network.org/apidoc/rest.html).
 
 
 ## Installation
