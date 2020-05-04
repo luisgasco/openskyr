@@ -4,13 +4,13 @@
 \name{openskyR}
 \alias{openskyR}
 \title{openskyr: A third-party client to facilitate the access to the data offered by
-OpenSky-Network in its REST API.}
+'OpenSky Network' in its REST API.}
 \description{
 DESCRIPTION
 }
-\section{openskyR functions}{
+\section{openskyr functions}{
 
-The openskyR functions allow you to access of any of the REST-API
+The openskyr functions allow you to access of any of the REST-API
 functions available in opensky-network. In many of the requests,
 you would need a user account that you can create in their website.
 }

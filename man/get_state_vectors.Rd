@@ -4,24 +4,30 @@
 \alias{get_state_vectors}
 \title{get_state_vectors}
 \usage{
-get_state_vectors(username, password, ...)
+get_state_vectors(username = NULL, password = NULL, ...)
 }
 \arguments{
-\item{username}{Your opensky-network username.}
+\item{username}{Your 'OpenSky Network' username.}
 
-\item{password}{Your opensky-network password.}
+\item{password}{Your 'OpenSky Network' password.}
 
 \item{...}{Optional parameters to introduce in the request. This parameters
 are time, icao24, lamin, lomin, lamax, and lomax. These parameters are
-specified in \href{https://bit.ly/3cMb2CS}{opensky-network's REST API - All State Vectors}}
+specified in \href{https://bit.ly/3cMb2CS}{ 'OpenSky Network' REST API - All State Vectors}}
 }
 \value{
-A data.frame with fields specified in the opensky-network REST API
+A data.frame with fields specified in the 'OpenSky Network' REST API
 \href{https://bit.ly/3aLraD0}{documentation}.
 }
 \description{
-Retrieve any state vector at the OpenSky-Network API.
+Retrieve any state vector at the 'OpenSky Network' API.
 Depending on whether you use your personal credentials or not,
 you will have some limitations rate limits as explained in
-\href{https://bit.ly/2SgxFY6}{opensky-network documentation}
+\href{https://bit.ly/2SgxFY6}{'OpenSky Network' documentation}
+}
+\examples{
+\donttest{get_state_vectors()}
+\dontrun{get_state_vectors("your_username","your_password")}
+
+
 }

@@ -1,20 +1,24 @@
 #' @title get_state_vectors
 #' @name get_state_vectors
-#' @description Retrieve any state vector at the OpenSky-Network API.
+#' @description Retrieve any state vector at the 'OpenSky Network' API.
 #'  Depending on whether you use your personal credentials or not,
 #' you will have some limitations rate limits as explained in
-#'  [opensky-network documentation](https://bit.ly/2SgxFY6)
+#'  ['OpenSky Network' documentation](https://bit.ly/2SgxFY6)
 #'
-#' @param username Your opensky-network username.
-#' @param password Your opensky-network password.
+#' @param username Your 'OpenSky Network' username.
+#' @param password Your 'OpenSky Network' password.
 #' @param ... Optional parameters to introduce in the request. This parameters
 #' are time, icao24, lamin, lomin, lamax, and lomax. These parameters are
-#' specified in [opensky-network's REST API - All State Vectors](https://bit.ly/3cMb2CS)
+#' specified in [ 'OpenSky Network' REST API - All State Vectors](https://bit.ly/3cMb2CS)
 #'
-#' @return A data.frame with fields specified in the opensky-network REST API
+#' @return A data.frame with fields specified in the 'OpenSky Network' REST API
 #'  [documentation](https://bit.ly/3aLraD0).
 #'
-#' @usage get_state_vectors(username, password, ...)
+#'
+#' @examples
+#' \donttest{get_state_vectors()}
+#' \dontrun{get_state_vectors(username = "your_username", password = "your_password")}
+#'
 #'
 #' @export
 #' @import httr

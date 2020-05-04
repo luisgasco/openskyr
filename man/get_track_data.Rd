@@ -4,12 +4,12 @@
 \alias{get_track_data}
 \title{get_track_data}
 \usage{
-get_track_data(username, password, icao24, time)
+get_track_data(username = NULL, password = NULL, icao24 = NULL, time = NULL)
 }
 \arguments{
-\item{username}{Your opensky-network username.}
+\item{username}{Your 'OpenSky Network' username.}
 
-\item{password}{Your opensky-network password.}
+\item{password}{Your 'OpenSky Network' password.}
 
 \item{icao24}{Unique ICAO 24-bit address of the transponder in hex string
 representation. All letters need to be lower case}
@@ -25,4 +25,8 @@ time.
 Retrieve flights for a certain airport which arrived within a
 given time interval. If no flights are found for the given period, HTTP
 stats 404 - Not found is returned with an empty response body.
+}
+\examples{
+\dontrun{get_track_data("luisgasco", "masterEOI2015", icao24 = 3c4b26, time = 0)}
+
 }

@@ -4,12 +4,19 @@
 \alias{get_airport_data}
 \title{get_airport_data}
 \usage{
-get_airport_data(username, password, airport, begin, end, option)
+get_airport_data(
+  username = NULL,
+  password = NULL,
+  airport = NULL,
+  begin = NULL,
+  end = NULL,
+  option = c("departures", "arrivals")
+)
 }
 \arguments{
-\item{username}{Your opensky-network username.}
+\item{username}{Your 'OpenSky Network' username.}
 
-\item{password}{Your opensky-network password.}
+\item{password}{Your 'OpenSky Network' password.}
 
 \item{airport}{ICAO identifier for the airport.}
 
@@ -30,4 +37,11 @@ in airport in the period specified between begin and end.
 Retrieve flights for a certain airport which arrived within
 a given time interval. You should specified if you want departure or
 arrival flights in the function.
+}
+\examples{
+\dontrun{get_airport_data("your_username", "your_password", airport = "EDDF",
+ begin = 1517227200, end = 1517230800, option = "arrivals")}
+  \dontrun{get_airport_data("your_username", "your_password", airport = "EDDF",
+ begin = 1517227200, end = 1517230800, option = "departures")}
+
 }

@@ -4,12 +4,18 @@
 \alias{get_flights_data}
 \title{get_flights_data}
 \usage{
-get_flights_data(username, password, icao24, begin, end)
+get_flights_data(
+  username = NULL,
+  password = NULL,
+  icao24 = NULL,
+  begin = NULL,
+  end = NULL
+)
 }
 \arguments{
-\item{username}{Your opensky-network username.}
+\item{username}{Your 'OpenSky Network' username.}
 
-\item{password}{Your opensky-network password.}
+\item{password}{Your 'OpenSky Network' password.}
 
 \item{icao24}{Unique ICAO 24-bit address of the transponder in hex string
 representation. All letters need to be lower case.}
@@ -28,4 +34,9 @@ defined during the period specified in begin and end.
 Retrieve flights for a certain airport which arrived
 within a given time interval. If no flights are found for the given
 period, HTTP stats 404 - Not found is returned with an empty response body.
+}
+\examples{
+\dontrun{get_flights_data(username = "your_username", password = "your_password",
+ icao24 = 3c675a , begin = 1517227200, end = 1517230800)}
+
 }

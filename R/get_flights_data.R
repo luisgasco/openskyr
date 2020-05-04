@@ -4,8 +4,8 @@
 #'  within a given time interval. If no flights are found for the given
 #'  period, HTTP stats 404 - Not found is returned with an empty response body.
 #'
-#' @param username Your opensky-network username.
-#' @param password Your opensky-network password.
+#' @param username Your 'OpenSky Network' username.
+#' @param password Your 'OpenSky Network' password.
 #' @param icao24 Unique ICAO 24-bit address of the transponder in hex string
 #'  representation. All letters need to be lower case.
 #' @param begin Start of time interval to retrieve flights for as Unix time
@@ -16,7 +16,9 @@
 #' @return A dataframe with the list of flights arriving to the airport
 #'  defined during the period specified in begin and end.
 #'
-#' @usage get_flights_data(username, password, icao24, begin, end)
+#' @examples
+#' \dontrun{get_flights_data(username = "your_username", password = "your_password",
+#'  icao24 = 3c675a , begin = 1517227200, end = 1517230800)}
 #'
 #' @export
 #' @import httr
