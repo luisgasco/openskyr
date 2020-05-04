@@ -27,7 +27,7 @@ you will have some limitations rate limits as explained in
 }
 \examples{
 \donttest{get_state_vectors()}
-\dontrun{get_state_vectors("your_username","your_password")}
+\dontrun{get_state_vectors(username = "your_username", password = "your_password")}
 
 
 }

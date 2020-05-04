@@ -27,6 +27,7 @@ given time interval. If no flights are found for the given period, HTTP
 stats 404 - Not found is returned with an empty response body.
 }
 \examples{
-\dontrun{get_track_data("luisgasco", "masterEOI2015", icao24 = 3c4b26, time = 0)}
+\dontrun{get_track_data(username = "your_username", password = "your_password",
+icao24 = 3c4b26, time = 0)}
 
 }

@@ -39,9 +39,9 @@ a given time interval. You should specified if you want departure or
 arrival flights in the function.
 }
 \examples{
-\dontrun{get_airport_data("your_username", "your_password", airport = "EDDF",
- begin = 1517227200, end = 1517230800, option = "arrivals")}
-  \dontrun{get_airport_data("your_username", "your_password", airport = "EDDF",
- begin = 1517227200, end = 1517230800, option = "departures")}
+\dontrun{get_airport_data(username = "your_username", password = "your_password",
+ airport = "EDDF", begin = 1517227200, end = 1517230800, option = "arrivals")}
+\dontrun{get_airport_data(username = "your_username", password = "your_password",
+ airport = "EDDF", begin = 1517227200, end = 1517230800, option = "departures")}
 
 }
