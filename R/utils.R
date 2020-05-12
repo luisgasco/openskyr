@@ -46,7 +46,7 @@ recover_names <- function(option) {
                     "baro_altitude", "on_ground","velocity", "true_track", "vertical_rate","sensors", "geo_altitude", "squawk",
                     "spi", "position_source")
   } else if (option == "tracks_names") {
-    column_names <- c("icao24","startTime","endTime","callsign")
+    column_names <- c("icao24","callsign","startTime","endTime")
   } else if (option == "trackdata_names"){
     column_names <- c("time","latitude","longitude","baro_altitude","true_track","on_ground")
   }

@@ -50,10 +50,8 @@ get_airport_data <- function(username = NULL, password = NULL,
         capture_error(response_init)
         # Get the data from the response
         response <- content(response_init)
-        # PRepare the output
-        m_response <- suppressWarnings(data.frame(Reduce(rbind, response),
-                                                  row.names = NULL))
-        names(m_response) <- recover_names("airport_names")
+        # Prepare the output
+        m_response <- purrr::map_df(response, purrr::flatten)
     } else {
         # If Login data is not provided, it will throw an error.
         stop("OpenSky API needs login data to get this information",

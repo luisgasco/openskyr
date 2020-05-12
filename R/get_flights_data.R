@@ -48,8 +48,7 @@ get_flights_data <- function(username = NULL, password = NULL,
                          query = params_list)
     capture_error(response_init)
     response <- content(response_init)
-    m_response <- suppressWarnings(data.frame(Reduce(rbind, response),
-                                              row.names = NULL))
-    colnames(m_response) <- recover_names("flight_names")
+    # Prepare the output
+    m_response <- purrr::map_df(response, purrr::flatten)
     return(m_response)
 }

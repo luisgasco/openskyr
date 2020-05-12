@@ -17,5 +17,5 @@ Roxygen: list(markdown = TRUE)
 Suggests: testthat,
     knitr,
     rmarkdown
-Imports: httr
+Imports: httr, purrr, data.table, tibble
 VignetteBuilder: knitr

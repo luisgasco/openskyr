@@ -44,13 +44,18 @@ get_track_data <- function(username = NULL, password = NULL,
   response <- content(response_init)
 
   # Put track_data in df format:
-  track_data <- as.data.frame(do.call(rbind, lapply(response$path, as.vector)))
+  response <- content(response_init)
+  # Prepare the output
+  response2 <- purrr::modify_depth(response$path, 2, function(x) ifelse(is.null(x), NA, x))
+
+  # Prepare the output
+  track_data <-   tibble::as_tibble(data.table::rbindlist(response2))
   colnames(track_data) <- recover_names("trackdata_names")
 
-  meta_data <- data.frame(response[1:4])
+  meta_data <- tibble::as_tibble(response[1:4])
   colnames(meta_data) <- recover_names("tracks_names")
 
-  m_response<-merge(meta_data,track_data)
+  m_response<-tibble::as_tibble(merge(meta_data,track_data))
 
   return(m_response)
 }
