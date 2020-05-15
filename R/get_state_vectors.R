@@ -43,9 +43,11 @@ get_state_vectors <- function(username = NULL, password = NULL, ...) {
     capture_error(response_init)
     # Get the data from the response
     response <- content(response_init)
-    # PRepare the output dataframe
-    m_response <- suppressWarnings(data.frame(Reduce(rbind, response$states),
-                                              row.names = NULL))
-    names(m_response) <- recover_names("statevector_names")
+    # Prepare the output
+    response2 <- purrr::modify_depth(response$states, 2, function(x) ifelse(is.null(x), NA, x))
+
+    # Prepare the output
+    m_response <-   tibble::as_tibble(data.table::rbindlist(response2))
+    colnames(m_response) <- recover_names("statevector_names")
     return(m_response)
 }
